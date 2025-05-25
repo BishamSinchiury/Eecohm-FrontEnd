@@ -74,7 +74,7 @@ const OrgSetup = () => {
 
           <div className="form-group">
             <label htmlFor="address" className="label">Address</label>
-            <textarea
+            <input
               id="address"
               name="address"
               value={formData.address}
@@ -83,7 +83,7 @@ const OrgSetup = () => {
               rows="4"
               className="textarea"
               placeholder="Enter organization address"
-            ></textarea>
+            ></input>
           </div>
 
           <div className="grid">
