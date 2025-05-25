@@ -13,7 +13,7 @@ const LoginForm = () => {
     setError('');
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/token/', {
+      const response = await fetch('http://192.168.1.87/api/user/login/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
