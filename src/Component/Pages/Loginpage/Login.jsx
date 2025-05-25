@@ -30,7 +30,6 @@ const LoginForm = () => {
       setError('Network error. Please check your connection.');
     }
   };
-
   return (
     <div className="login-container">
       <div className="login-box">
