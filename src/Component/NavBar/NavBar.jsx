@@ -24,7 +24,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="dashboard">
+    <>
       <button className="toggle-sidebar" onClick={toggleSidebar}>
         ☰
       </button>
@@ -47,7 +47,7 @@ const NavBar = () => {
           </nav>
         </div>
       </div>
-    </div>
+   </>
   );
 };
 

@@ -1,29 +1,42 @@
+/* Main container */
 .main-div {
   display: flex;
   min-height: 100vh;
-  background: #1a1a1a;
+  background: #1a1a1a; /* Matches NavBar dashboard */
 }
 
+/* Form container */
 .student-data-entry-form {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch; /* Changed from center to stretch */
   padding: 20px;
   box-sizing: border-box;
   background: #1a1a1a;
+  margin-left: 250px; /* Default for open sidebar */
+  transition: margin-left 0.3s ease; /* Smooth transition for sidebar toggle */
+  width: calc(100% - 250px); /* Fill remaining space */
 }
 
+/* Adjust margin for closed sidebar */
+.sidebar-container.closed ~ .student-data-entry-form {
+  margin-left: 60px;
+  width: calc(100% - 60px);
+}
+
+/* Heading */
 .heading {
   color: white;
-  font-size: 2.5rem;
-  margin: 20px 0;
+  font-size: 2rem; /* Reduced for consistency with FeedbackReport */
+  margin: 15px 0; /* Reduced margins */
   text-align: center;
   font-family: 'Arial', sans-serif;
   font-weight: bold;
 }
 
+/* Detail group */
 .detail-group {
   display: grid;
   grid-template-columns: auto 1fr auto 1fr auto 1fr;
@@ -31,15 +44,16 @@
   align-items: center;
   border: solid #444 1px;
   border-radius: 12px;
-  padding: 25px;
-  margin: 15px 0;
+  padding: 20px; /* Slightly reduced */
+  margin: 10px 0; /* Reduced margins */
   background: #2d2d2d;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  max-width: 1200px;
+  width: 100%; /* Fill container */
+  max-width: 1000px; /* Reduced from 1200px for better fit */
   box-sizing: border-box;
 }
 
+/* Address group */
 .address-group {
   grid-template-columns: auto 1fr;
   gap: 15px;
@@ -51,6 +65,7 @@
   margin-top: 10px;
 }
 
+/* Text input */
 .text-input {
   height: 40px;
   width: 100%;
@@ -76,6 +91,7 @@
   background: #404040;
 }
 
+/* Address input */
 .address-input {
   width: 100%;
   min-height: 80px;
@@ -92,6 +108,7 @@
   border-color: #6366f1;
 }
 
+/* File input */
 .file-input {
   padding: 8px 12px;
   cursor: pointer;
@@ -99,25 +116,27 @@
   color: white;
 }
 
+/* Text label */
 .text-label {
   color: #e0e0e0;
-  font-size: 16px;
+  font-size: 15px; /* Slightly reduced */
   font-weight: 500;
   text-align: left;
   white-space: nowrap;
 }
 
+/* Submit button */
 .submit-button {
   background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   color: white;
   border: none;
-  padding: 12px 30px;
-  font-size: 16px;
+  padding: 12px 25px; /* Slightly reduced */
+  font-size: 15px; /* Slightly reduced */
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin: 30px 0;
+  margin: 25px 0; /* Reduced margins */
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
@@ -141,13 +160,13 @@
 @media (max-width: 1024px) {
   .detail-group {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 12px;
   }
-  
+
   .text-label {
     margin-bottom: 5px;
   }
-  
+
   .address-group {
     grid-template-columns: 1fr;
   }
@@ -157,28 +176,30 @@
   .main-div {
     flex-direction: column;
   }
-  
+
   .student-data-entry-form {
     padding: 15px;
+    margin-left: 0; /* No sidebar margin on mobile */
+    width: 100%;
   }
-  
+
   .heading {
-    font-size: 2rem;
-    margin: 15px 0;
-  }
-  
-  .detail-group {
-    padding: 20px;
+    font-size: 1.8rem;
     margin: 10px 0;
   }
-  
+
+  .detail-group {
+    padding: 15px;
+    margin: 8px 0;
+  }
+
   .text-label {
     font-size: 14px;
   }
-  
+
   .text-input {
-    font-size: 14px;
-    height: 42px;
+    font-size: 13px;
+    height: 38px;
   }
 }
 
@@ -186,19 +207,19 @@
   .student-data-entry-form {
     padding: 10px;
   }
-  
+
   .heading {
-    font-size: 3.5vh;
+    font-size: 1.6rem;
   }
-  
+
   .detail-group {
-    padding: 15px;
+    padding: 12px;
   }
-  
+
   .submit-button {
     width: 100%;
-    padding: 12px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 14px;
   }
 }
 

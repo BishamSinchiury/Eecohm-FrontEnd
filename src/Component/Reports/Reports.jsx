@@ -12,6 +12,10 @@ const Reports = () => {
     {
         navigate('/school-student-feedback-add');
     }
+  const handleSchoolStudentFeedbackviewClick = () =>
+    {
+        navigate('/school-student-feedback-view');
+    }
 
 
 
@@ -39,7 +43,7 @@ const Reports = () => {
         <div className="card" onClick={handleSchoolStudentFeedbackEntryClick} style={{cursor:"pointer"}}>
             <h3>Add student FeedBack</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={handleSchoolStudentFeedbackviewClick} style={{cursor:"pointer"}}>
             <h3>See student FeedBack</h3>
           </div>
           <div className="card">
