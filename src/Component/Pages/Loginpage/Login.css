@@ -54,6 +54,8 @@
 }
 
 .input-error {
+  width: 100%;
+  padding: 10px;
   border: 2px solid #ff0000 !important;
   box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000 !important;
   animation: none;

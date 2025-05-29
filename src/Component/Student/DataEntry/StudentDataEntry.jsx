@@ -1,77 +1,94 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./StudentDataEntry.css";
+import NavBar from "../../NavBar/NavBar";
 
-export default function StudentEntryForm() {
-  const [formData, setFormData] = useState({
-    firstname: "",
-    middlename: "",
-    lastname: "",
-    student_class: "",
-    email:"",
-    phone_number:"",
-    section: "",
-    rollno: "",
-    registration_number: "",
-    symbol_number: "",
-    iemis_code: "",
-    address: "",
-    fathers_name: "",
-    mothers_name: "",
-    gender: "",
-    date_of_birth: ""
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    // TODO: Submit data to Django backend via API
-  };
+const StudentEntryForm = () => {
+ 
 
   return (
     <>
-    <form action="">
-      <div className="student-personal-detail-from">
-        <input 
-        className="stylish-input"
-        type="text" 
-        name="first-name"
-        placeholder="First Name"
-        required
-        />
-        <input 
-        className="stylish-input"
-        type="text" 
-        name="middle-name"
-        placeholder="Middle Name"
-        required
-        />
-        <input 
-        className="stylish-input"
-        type="text" 
-        name="last-name"
-        placeholder="Last Name"
-        required
-        />
+      <div className="main-div">
+        <NavBar />
+        <div className="student-data-entry-form">
+          <h1 className="heading">Student Registration Form</h1>
+          <div className="detail-group">
+            <label 
+            htmlFor="first-name"
+            className="text-label">
+              First Name: 
+            </label>
+            <input
+            className="text-input" 
+            type="text" 
+            name="first-name" 
+            id="firstName"
+             />
+              <label 
+            htmlFor="middle-name"
+            className="text-label">
+              Middle Name: 
+            </label>
+            <input
+            className="text-input" 
+            type="text" 
+            name="middle-name" 
+            id="middle-Name"
+             />
+             <label 
+            htmlFor="last-name"
+            className="text-label">
+              Last Name: 
+            </label>
+            <input
+            className="text-input" 
+            type="text" 
+            name="last-name" 
+            id="last-Name"
+             />
+          </div>
+          <div className="detail-group">
+            <label 
+            htmlFor="first-name"
+            className="text-label">
+              First Name: 
+            </label>
+            <input
+            className="text-input" 
+            type="text" 
+            name="first-name" 
+            id="firstName"
+             />
+              <label 
+            htmlFor="middle-name"
+            className="text-label">
+              Middle Name: 
+            </label>
+            <input
+            className="text-input" 
+            type="text" 
+            name="middle-name" 
+            id="middle-Name"
+             />
+             <label 
+            htmlFor="last-name"
+            className="text-label">
+              Last Name: 
+            </label>
+            <input
+            className="text-input" 
+            type="text" 
+            name="last-name" 
+            id="last-Name"
+             />
+          </div>
+          
+          
+          
+          <button type="button">Submit</button>
+        </div>
       </div>
-      <div className="student-personal-detail-from">
-        <select 
-          className="stylish-input" 
-          name="gender" 
-          required
-        >
-          <option value="">Select Gender</option>
-          <option value="M">Male</option>
-          <option value="F">Female</option>
-          <option value="O">Other</option>
-        </select>
-      </div>
-    </form>
-    
     </>
   );
-}
+};
+
+export default StudentEntryForm;

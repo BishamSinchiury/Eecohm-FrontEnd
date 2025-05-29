@@ -1,12 +1,19 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Dashboard.css';
-import NavBar from '../../NavBar/NavBar';
+import './Student.css';
+import NavBar from '../NavBar/NavBar';
 
-const Dashboard = () => {
+const Student = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const navigate = useNavigate();
+
+  const handleStudentDataClick = () =>
+    {
+        navigate('/student-entry');
+    }
+
+
 
 
 
@@ -29,22 +36,22 @@ const Dashboard = () => {
           </div>
         </header>
         <section className="dashboard-grid">
-        <div className="card">
-            <h3>Student Data Entry</h3>
+        <div className="card" onClick={handleStudentDataClick} style={{cursor:"pointer"}}>
+            <h3>Add student School</h3>
             <p>Students: 1,200</p>
             <p>College: 80</p>
             <p>School: 45</p>
           </div>
           <div className="card">
-            <h3>Recent Tasks</h3>
+            <h3>Add student College</h3>
             <ul>
-              <li>Review Budget Proposal</li>
+              <li>Add student College</li>
               <li>Schedule Parent-Teacher Meeting</li>
               <li>Update Attendance Records</li>
             </ul>
           </div>
           <div className="card">
-            <h3>Upcoming Events</h3>
+            <h3>View Students</h3>
             <ul>
               <li>Science Fair - May 30</li>
               <li>Sports Day - June 5</li>
@@ -57,4 +64,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Student;
