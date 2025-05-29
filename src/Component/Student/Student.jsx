@@ -23,10 +23,10 @@ const Student = () => {
 
   return (
     <div className="dashboard">
+      <NavBar />
       <button className="toggle-sidebar" onClick={toggleSidebar}>
         ☰
       </button>
-      <NavBar />
       <div className="main-content">
         <header>
           <h1>Welcome to SchoolSync</h1>

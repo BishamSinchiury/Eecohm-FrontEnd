@@ -1,34 +1,216 @@
-.main-div{
+.main-div {
   display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.student-data-entry-form{
+.student-data-entry-form {
   width: 100%;
-  justify-content: center;
-  justify-items: center
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
-.heading{
+
+.heading {
   color: white;
   font-size: 5vh;
-  margin: 1vh;
+  margin: 2vh 0;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
 }
-.detail-group{
+
+.detail-group {
   display: flex;
-  border: solid gray 2px;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  border: solid #e0e0e0 2px;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 15px 0;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
-.text-input{
+
+.address-group {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.address-group .text-label {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.text-input {
   height: 40px;
-  width: 300px;
-  border-radius: 10px;
-  padding-left: 10px;
-  font-size: 20px;
-  margin:5px 20px 5px 0;
+  min-width: 250px;
+  max-width: 300px;
+  border-radius: 8px;
+  padding: 0 15px;
+  font-size: 16px;
+  margin: 8px 15px 8px 0;
+  border: 2px solid #ddd;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background: white;
 }
-.text-label{
+
+.text-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-1px);
+}
+
+.text-input:hover {
+  border-color: #bbb;
+}
+
+.address-input {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  padding: 15px;
+  font-family: inherit;
+}
+
+.file-input {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.text-label {
+  color: #333;
+  font-size: 18px;
+  margin: 8px 15px 8px 0;
+  font-weight: 600;
+  min-width: 120px;
+  text-align: left;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  font-size: 30px;
-  margin: 5px 15px 5px 20px;
+  border: none;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 30px 0;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .detail-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .text-input {
+    width: 100%;
+    max-width: none;
+    margin: 8px 0;
+  }
+  
+  .text-label {
+    margin: 10px 0 5px 0;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-div {
+    flex-direction: column;
+  }
+  
+  .student-data-entry-form {
+    padding: 15px;
+  }
+  
+  .heading {
+    font-size: 4vh;
+    margin: 1vh 0;
+  }
+  
+  .detail-group {
+    padding: 20px;
+    margin: 10px 0;
+  }
+  
+  .text-label {
+    font-size: 16px;
+  }
+  
+  .text-input {
+    font-size: 16px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-data-entry-form {
+    padding: 10px;
+  }
+  
+  .heading {
+    font-size: 3.5vh;
+  }
+  
+  .detail-group {
+    padding: 15px;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+/* Form validation styles */
+.text-input:invalid {
+  border-color: #e74c3c;
+}
+
+.text-input:valid {
+  border-color: #27ae60;
+}
+
+/* Loading state for form */
+form:has(.submit-button:disabled) {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Smooth animations */
+* {
+  transition: all 0.2s ease;
 }

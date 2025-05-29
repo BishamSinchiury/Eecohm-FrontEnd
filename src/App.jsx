@@ -14,7 +14,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/student-entry" element={<StudentEntryForm />} />
         <Route path="/org-setup" element={<OrgSetup />} />
-        <Route path="/student" element={<Student />} />
+        {/* <Route path="/student" element={<Student />} /> */}
       </Routes>
     </BrowserRouter>
   );
