@@ -5,6 +5,9 @@ import StudentEntryForm from './Component/Student/DataEntry/StudentDataEntry';
 import OrgSetup from './Component/OrgSetUp/OrgSetup';
 import Dashboard from './Component/Pages/Dashboard/Dashboard';
 import LoginForm from './Component/Pages/Loginpage/Login';
+import Student from './Component/Student/Student';
+import Report from './Component/Reports/Reports'
+import SchoolStudentFeedbackAdd from './Component/Reports/SchoolStuendentFeedBack/SchoolStudentFeedbackAdd'
 
 function App() {
   return (
@@ -14,7 +17,9 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/student-entry" element={<StudentEntryForm />} />
         <Route path="/org-setup" element={<OrgSetup />} />
-        {/* <Route path="/student" element={<Student />} /> */}
+        <Route path="/student" element={<Student />} />
+        <Route path="/report" element={<Report />} />
+        <Route path="/school-student-feedback-add" element={<SchoolStudentFeedbackAdd />} />
       </Routes>
     </BrowserRouter>
   );

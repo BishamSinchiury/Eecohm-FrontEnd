@@ -15,7 +15,7 @@ const NavBar = () => {
     { name: 'Students', icon: '🎓', path: '/student' },
     { name: 'Teachers', icon: '👩‍🏫', path: '/teachers' },
     { name: 'Settings', icon: '⚙️', path: '/settings' },
-    { name: 'Reports', icon: '📊', path: '/reports' },
+    { name: 'Reports', icon: '📊', path: '/report' },
     { name: 'Inventory', icon: '📦', path: '/reports' },
   ];
 

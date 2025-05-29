@@ -29,7 +29,7 @@ const StudentEntryForm = () => {
 
   const fetchClasses = async () => {
     try {
-      const response = await fetch('http://192.168.1.100/api/admin/classes');
+      const response = await fetch('http://192.168.1.100/api/sadmin/classes');
       if (response.ok) {
         const data = await response.json();
         setClasses(data);
@@ -170,8 +170,8 @@ const StudentEntryForm = () => {
               >
                 <option value="">Select Class</option>
                 {classes.map((cls, index) => (
-                  <option key={index} value={cls.name || cls}>
-                    {cls.name || cls}
+                  <option key={index} value={cls.grade_name || cls}>
+                    {cls.grade_name || cls}
                   </option>
                 ))}
               </select>
@@ -311,9 +311,10 @@ const StudentEntryForm = () => {
               <label htmlFor="address" className="text-label">
                 Address: 
               </label>
-              <textarea
+              <input
                 className="text-input address-input" 
-                name="address" 
+                name="address"
+                type="text" 
                 id="address"
                 value={formData.address}
                 onChange={handleInputChange}
