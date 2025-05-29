@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // ✅ Import navigate hook
 import './Login.css';
 
 const LoginForm = () => {
+  const navigate = useNavigate(); // ✅ Create navigate function
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -20,7 +22,7 @@ const LoginForm = () => {
       });
 
       if (response.status === 200) {
-        window.location.href = '/dashboard';
+        navigate('/dashboard'); // ✅ Use React Router navigation
       } else if ([401, 403].includes(response.status)) {
         setError('Invalid credentials');
       } else {
@@ -30,6 +32,7 @@ const LoginForm = () => {
       setError('Network error. Please check your connection.');
     }
   };
+
   return (
     <div className="login-container">
       <div className="login-box">
